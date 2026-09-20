@@ -197,7 +197,6 @@
     .module-card.cat-hvac::before { background: #3498db; }
     .module-card.cat-elec::before { background: #f1c40f; }
     .module-card.cat-lift::before { background: #e74c3c; }
-    .module-card.cat-math::before { background: #9b59b6; }
 
     .card-top {
       display: flex;
@@ -226,7 +225,6 @@
     .cat-hvac .cat-badge { color: #5dade2; background: rgba(52, 152, 219, 0.15); }
     .cat-elec .cat-badge { color: #f39c12; background: rgba(243, 156, 18, 0.15); }
     .cat-lift .cat-badge { color: #ff7675; background: rgba(231, 76, 60, 0.15); }
-    .cat-math .cat-badge { color: #bb86fc; background: rgba(155, 89, 182, 0.15); }
 
     .card-title-zh {
       font-size: 17px;
@@ -255,57 +253,34 @@
       color: #cbd5e1;
     }
 
-    /* Actions buttons */
+    /* Actions button */
     .card-actions {
       display: flex;
-      gap: 10px;
       margin-top: auto;
       padding-top: 15px;
       border-top: 1px solid rgba(255, 255, 255, 0.06);
     }
     .btn-launch {
-      flex: 2;
+      width: 100%;
       background: linear-gradient(135deg, var(--primary), var(--primary-dark));
       color: #fff;
       text-decoration: none;
-      font-size: 13.5px;
+      font-size: 14px;
       font-weight: 700;
-      padding: 10px 14px;
+      padding: 12px 16px;
       border-radius: 8px;
       text-align: center;
       transition: all 0.2s ease;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 6px;
+      gap: 8px;
       box-shadow: 0 4px 12px rgba(22, 160, 133, 0.3);
     }
     .btn-launch:hover {
       background: linear-gradient(135deg, #1abc9c, var(--primary));
       transform: translateY(-2px);
       box-shadow: 0 6px 16px rgba(22, 160, 133, 0.45);
-    }
-    .btn-repo {
-      flex: 1;
-      background: #0f172a;
-      border: 1px solid var(--card-border);
-      color: #cbd5e1;
-      text-decoration: none;
-      font-size: 12.5px;
-      font-weight: 600;
-      padding: 10px;
-      border-radius: 8px;
-      text-align: center;
-      transition: all 0.2s ease;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 4px;
-    }
-    .btn-repo:hover {
-      background: #1e293b;
-      color: #fff;
-      border-color: var(--text-sub);
     }
 
     /* Footer */
@@ -339,19 +314,19 @@
   <!-- Statistics Overview -->
   <div class="stats-grid">
     <div class="stat-card">
-      <div class="stat-num" id="totalModules">13</div>
+      <div class="stat-num" id="totalModules">12</div>
       <div class="stat-label">課程模組 / Modules</div>
     </div>
     <div class="stat-card">
-      <div class="stat-num">300+</div>
+      <div class="stat-num">300</div>
       <div class="stat-label">隨機練習題 / MCQs</div>
     </div>
     <div class="stat-card">
-      <div class="stat-num">65+</div>
+      <div class="stat-num">60</div>
       <div class="stat-label">工程計算題 / Short Qs</div>
     </div>
     <div class="stat-card">
-      <div class="stat-num">150+</div>
+      <div class="stat-num">144</div>
       <div class="stat-label">SCADA 動態原理圖</div>
     </div>
   </div>
@@ -363,11 +338,10 @@
       <input type="text" id="searchInput" placeholder="搜尋課程編號、章節標題或關鍵字 (如: VAV, Lifts, 焓輪, 照度)...">
     </div>
     <div class="filter-tags">
-      <button class="filter-btn active" onclick="filterCategory('all', this)">全部 All (13)</button>
-      <button class="filter-btn" onclick="filterCategory('hvac', this)">暖通空調 HVAC (8)</button>
+      <button class="filter-btn active" onclick="filterCategory('all', this)">全部 All (12)</button>
+      <button class="filter-btn" onclick="filterCategory('hvac', this)">暖通空調 HVAC (9)</button>
       <button class="filter-btn" onclick="filterCategory('elec', this)">電氣與照明 Elec & Lighting (1)</button>
       <button class="filter-btn" onclick="filterCategory('lift', this)">升降機與扶梯 Lifts & Escalators (2)</button>
-      <button class="filter-btn" onclick="filterCategory('math', this)">工程數學 Math (1)</button>
     </div>
   </div>
 
@@ -382,7 +356,7 @@
 
 <script>
 // ==========================================
-// 13 門課程完整資料庫與鏈接配置
+// 12 門 BSE 專業課程資料庫配置 (已移除數學)
 // ==========================================
 const modulesData = [
   {
@@ -504,16 +478,6 @@ const modulesData = [
     titleEn: "Lift Installation: Components, Safety Gear & Hoistway",
     topics: ["有齒輪 vs 無齒輪直驅主機", "雙繞輪增摩與 2:1 懸掛比", "離心限速器與安全鉗聯鎖", "蓄能型 vs 耗能型緩衝器", "無機房 (MRL) 與消防電梯規範"],
     icon: "⚙️"
-  },
-  {
-    code: "EMATH I",
-    repoName: "HKCT_PTPDE-EE_EMATH_I",
-    category: "math",
-    categoryName: "Math 工程數學",
-    titleZh: "工程數學 I 專題複習與練習平台",
-    titleEn: "Engineering Mathematics I",
-    topics: ["矩陣運算與線性方程組", "微分與微積分應用", "複數與相量 (Phasors)", "一階/二階常微分方程 (ODE)", "拉普拉斯變換與工程建模"],
-    icon: "📐"
   }
 ];
 
@@ -534,7 +498,6 @@ function renderModules(data) {
 
   data.forEach(m => {
     const liveUrl = `https://${username}.github.io/${m.repoName}/`;
-    const repoUrl = `https://github.com/${username}/${m.repoName}`;
 
     const card = document.createElement("div");
     card.className = `module-card cat-${m.category}`;
@@ -553,9 +516,6 @@ function renderModules(data) {
       <div class="card-actions">
         <a href="${liveUrl}" target="_blank" class="btn-launch" title="前往互動學習平台 (GitHub Pages)">
           <span>🚀 進入平台 (Live)</span>
-        </a>
-        <a href="${repoUrl}" target="_blank" class="btn-repo" title="查看 GitHub 倉庫源代碼">
-          <span>📂 倉庫</span>
         </a>
       </div>
     `;
